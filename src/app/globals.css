@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme static {
+  /* Citrus brand */
+  --color-brand: #f47b20;
+  --color-brand-dark: #d96512;
+  --color-brand-light: #ff9f1c;
+  --color-brand-50: #fff6ef;
+  --color-brand-100: #ffe8d6;
+
+  /* Playful FigJam-ish secondaries */
+  --color-grape: #7c5cff;
+  --color-sky: #3bb3f2;
+  --color-mint: #29c793;
+  --color-lemon: #ffd33d;
+  --color-bubble: #ff6b9d;
+
+  --color-ink: #1b1b1b;
+  --color-ink-muted: #6b6b6b;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Rounded display face for headings and sticker labels */
+.font-display {
+  font-family: var(--font-fredoka), var(--font-jakarta), ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+/* Sticker look: hard ink border + solid offset shadow, as on a FigJam canvas */
+.sticker {
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+.sticker-sm {
+  border: 2px solid var(--color-ink);
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+
+.sticker-press {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.sticker-press:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--color-ink);
+}
+
+.sticker-press:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+@keyframes float-chip {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-chip 5s ease-in-out infinite;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw-line 2.2s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .sticker-press:hover {
+    transform: none;
+  }
+}
