@@ -113,7 +113,7 @@ export default function ProductPreview() {
             role="tablist"
             aria-label="Preview view"
             onKeyDown={onKeyDown}
-            className="ml-auto flex items-center gap-1 rounded-full bg-black/5 p-1"
+            className="ml-auto flex items-center gap-1 bg-black/5 p-1"
           >
             {VIEWS.map((view, i) => {
               const selected = view.id === active;
@@ -129,7 +129,7 @@ export default function ProductPreview() {
                   aria-controls={`preview-panel-${view.id}`}
                   tabIndex={selected ? 0 : -1}
                   onClick={() => setActive(view.id)}
-                  className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                  className={`px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                     selected
                       ? "bg-white text-ink shadow-sm"
                       : "text-ink-muted hover:text-ink"

@@ -38,6 +38,64 @@ body {
     system-ui, sans-serif;
 }
 
+/* Figma export used named faces; map them onto the fonts we already load. */
+.figma-fredoka-medium {
+  font-family: var(--font-fredoka), var(--font-jakarta), sans-serif;
+  font-weight: 500;
+}
+
+.figma-jakarta-regular {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 400;
+}
+
+.figma-jakarta-semibold {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 600;
+}
+
+.figma-jakarta-bold {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 700;
+}
+
+/* Keep interface surfaces sharp while preserving true circles. */
+:where(a, button) {
+  border-radius: 0 !important;
+}
+
+:where(.rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-t) {
+  border-radius: 0 !important;
+}
+
+/* The floating navigation intentionally follows its supplied rounded reference. */
+.nav-shell {
+  border-radius: 6px;
+}
+
+.nav-action {
+  border-radius: 6px !important;
+}
+
+.footer-newsletter {
+  border-radius: 12px;
+}
+
+.footer-newsletter-form {
+  border-radius: 999px;
+}
+
+.footer-submit {
+  border-radius: 999px !important;
+}
+
+.footer-avatar-mask {
+  mask-image: url("/assets/f0deb.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 24px 24px;
+}
+
 /* Sticker look: hard ink border + solid offset shadow, as on a FigJam canvas */
 .sticker {
   border: 2px solid var(--color-ink);

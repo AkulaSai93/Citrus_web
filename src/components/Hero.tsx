@@ -96,7 +96,7 @@ export default function Hero() {
             color="#ffe9a8"
             className="absolute -left-20 top-32 hidden -rotate-6 xl:block"
           >
-            Sprint 14 kicks off Monday 🚀
+            Sprint 14 kicks off Monday
           </StickyNote>
 
           <h1 className="text-balance text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[4.25rem]">
